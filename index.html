@@ -1,0 +1,42 @@
+<html>
+
+    <head>
+
+    <meta charset="UTF-8">
+
+    <title>Hello World</title>
+
+    </head>
+
+        <body>
+
+            <h1>Hello Welcome to DTx DevOps team Project!!</h1>
+
+
+        </body>
+
+
+<div id="webchat"/>
+<script src="https://storage.googleapis.com/mrbot-cdn/webchat-latest.js"></script>
+//Or you can replace latest with a specific version
+<div id="webchat"></div>
+<script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+// you can add a version tag if you need, e.g for version 0.11.5 https://cdn.jsdelivr.net/npm/rasa-webchat@0.11.5/lib/index.min.js
+<script>
+  WebChat.default.init({
+    selector: "#webchat",
+    initPayload: "/fill_details",
+    customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+    socketUrl: "http://localhost:5005",
+    socketPath: "/socket.io/",
+    title: "DTx AI-Bot",
+    subtitle: "CBN DTx Intelligence",
+    params: {"storage": "session"} // can be set to "local"  or "session". details in storage section.
+  })
+</script>
+
+
+
+        </body>
+
+</html>

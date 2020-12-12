@@ -1,0 +1,501 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+- story: unhappy user_business_loan_form path
+  steps:
+  - intent: deny
+  - action: action_deny_business
+  - action: action_submit
+
+
+- story: unhappy job_after_exit path
+  steps:
+  - intent: NoJob
+  - action: action_deny_affirm_job
+
+- story: happy job_after_exit path
+  steps:
+  - intent: HadJob
+  - action: action_deny_affirm_job
+  - intent: job_type
+  - action: action_deny_affirm_job
+
+- story: unhappy acquire skill path
+  steps:
+  - intent: NotSure
+  - action: action_acquire_skills
+  - action: utter_ask_any_business
+
+
+#- story: happy user_job_skill_form path
+#  steps:
+#  - intent: affirm
+#  - action: user_job_skill_form
+#  - active_loop: user_job_skill_form
+#  - active_loop: null
+#
+#- story: unhappy user_job_skill_form path
+#  steps:
+#  - intent: deny
+#  - action: user_job_skill_form
+#  - active_loop: user_job_skill_form
+#  - active_loop: null
+
+
+
+#- story: happy path
+#  steps:
+#  - intent: affirm
+#    entities:
+#    - yes_no: "yes"
+#  - slot_was_set:
+#      - job_after_exit: "Yes"
+#  - action: utter_job_type
+#  - intent: job_type
+#    entities:
+#    - type_job: "salary"
+#  - slot_was_set:
+#      - type_job: "salary"
+#  - action: utter_acquire_skill
+#  - intent: affirm
+#    entities:
+#    - yes_no: "yes"
+#  - slot_was_set:
+#      - acquire_skill: "Yes"
+#  - action: utter_skill_type
+#
+#- story: deny path
+#  steps:
+#  - intent: deny
+#    entities:
+#    - yes_no: "no"
+#  - slot_was_set:
+#      - job_after_exit: "No"
+#  - action: utter_acquire_skill
+#  - intent: affirm
+#    entities:
+#    - yes_no: "yes"
+#  - slot_was_set:
+#      - acquire_skill: "Yes"
+#  - action: utter_skill_type
+
+
+
+#- story: happy FAQ path 1
+#  steps:
+#  - intent: question_1
+#  - action: utter_question_1
+#
+#- story: happy FAQ path 2
+#  steps:
+#  - intent: question_2
+#  - action: utter_question_2
+#
+#- story: happy FAQ path 3
+#  steps:
+#  - intent: question_3
+#  - action: utter_question_3
+#
+#- story: happy FAQ path 4
+#  steps:
+#  - intent: question_4
+#  - action: utter_question_4
+#
+#- story: happy FAQ path 5
+#  steps:
+#  - intent: question_5
+#  - action: utter_question_5
+#
+#- story: happy FAQ path 6
+#  steps:
+#  - intent: question_6
+#  - action: utter_question_6
+#
+#- story: happy FAQ path 7
+#  steps:
+#  - intent: question_7
+#  - action: utter_question_7
+#
+#- story: happy FAQ path 8
+#  steps:
+#  - intent: question_8
+#  - action: utter_question_8
+#
+#- story: happy FAQ path 9
+#  steps:
+#  - intent: question_9
+#  - action: utter_question_9
+#
+#- story: happy FAQ path 10
+#  steps:
+#  - intent: question_10
+#  - action: utter_question_10
+#
+#- story: happy FAQ path 11
+#  steps:
+#  - intent: question_11
+#  - action: utter_question_11
+#
+#- story: happy FAQ path 12
+#  steps:
+#  - intent: question_12
+#  - action: utter_question_12
+#
+#- story: happy FAQ path 13
+#  steps:
+#  - intent: question_13
+#  - action: utter_question_13
+#
+#- story: happy FAQ path 14
+#  steps:
+#  - intent: question_14
+#  - action: utter_question_14
+#
+#- story: happy FAQ path 15
+#  steps:
+#  - intent: question_15
+#  - action: utter_question_15
+#
+#- story: happy FAQ path 16
+#  steps:
+#  - intent: question_16
+#  - action: utter_question_16
+#
+#- story: happy FAQ path 17
+#  steps:
+#  - intent: question_17
+#  - action: utter_question_17
+#
+#- story: happy FAQ path 18
+#  steps:
+#  - intent: question_18
+#  - action: utter_question_18
+#
+#- story: happy FAQ path 19
+#  steps:
+#  - intent: question_19
+#  - action: utter_question_19
+#
+#- story: happy FAQ path 20
+#  steps:
+#  - intent: question_20
+#  - action: utter_question_20
+#
+#- story: happy FAQ path 21
+#  steps:
+#  - intent: question_21
+#  - action: utter_question_21
+#
+#- story: happy FAQ path 22
+#  steps:
+#  - intent: question_22
+#  - action: utter_question_22
+#
+#- story: happy FAQ path 23
+#  steps:
+#  - intent: question_23
+#  - action: utter_question_23
+#
+#- story: happy FAQ path 24
+#  steps:
+#  - intent: question_24
+#  - action: utter_question_24
+#
+#- story: happy FAQ path 25
+#  steps:
+#  - intent: question_25
+#  - action: utter_question_25
+#
+#- story: happy FAQ path 26
+#  steps:
+#  - intent: question_26
+#  - action: utter_question_26
+#
+#- story: happy FAQ path 27
+#  steps:
+#  - intent: question_27
+#  - action: utter_question_27
+#
+#- story: happy FAQ path 28
+#  steps:
+#  - intent: question_28
+#  - action: utter_question_28
+#
+#- story: happy FAQ path 29
+#  steps:
+#  - intent: question_29
+#  - action: utter_question_29
+#
+#- story: happy FAQ path 30
+#  steps:
+#  - intent: question_30
+#  - action: utter_question_30
+#
+#- story: happy FAQ path 31
+#  steps:
+#  - intent: question_31
+#  - action: utter_question_31
+#
+#- story: happy FAQ path 32
+#  steps:
+#  - intent: question_32
+#  - action: utter_question_32
+#
+#- story: happy FAQ path 33
+#  steps:
+#  - intent: question_33
+#  - action: utter_question_33
+#
+#- story: happy FAQ path 37
+#  steps:
+#  - intent: question_37
+#  - action: utter_question_37
+#
+#- story: happy FAQ path 38
+#  steps:
+#  - intent: question_38
+#  - action: utter_question_38
+#
+#- story: happy FAQ path 39
+#  steps:
+#  - intent: question_39
+#  - action: utter_question_39
+#
+#- story: happy FAQ path 40
+#  steps:
+#  - intent: question_40
+#  - action: utter_question_40
+#
+#- story: happy FAQ path 41
+#  steps:
+#  - intent: question_41
+#  - action: utter_question_41
+#
+#- story: happy FAQ path 42
+#  steps:
+#  - intent: question_42
+#  - action: utter_question_42
+#
+#- story: happy FAQ path 43
+#  steps:
+#  - intent: question_43
+#  - action: utter_question_43
+#
+#- story: happy FAQ path 44
+#  steps:
+#  - intent: question_44
+#  - action: utter_question_44
+#
+#- story: happy FAQ path 45
+#  steps:
+#  - intent: question_45
+#  - action: utter_question_45
+#
+#- story: happy FAQ path 46
+#  steps:
+#  - intent: question_46
+#  - action: utter_question_46
+#
+#- story: happy FAQ path 47
+#  steps:
+#  - intent: question_47
+#  - action: utter_question_47
+#
+#- story: happy FAQ path 48
+#  steps:
+#  - intent: question_48
+#  - action: utter_question_48
+#
+#- story: happy FAQ path 49
+#  steps:
+#  - intent: question_49
+#  - action: utter_question_49
+#
+#- story: happy FAQ path 50
+#  steps:
+#  - intent: question_50
+#  - action: utter_question_50
+#
+#- story: happy FAQ path 51
+#  steps:
+#  - intent: question_51
+#  - action: utter_question_51
+#
+#- story: happy FAQ path 52
+#  steps:
+#  - intent: question_52
+#  - action: utter_question_52
+#
+#- story: happy FAQ path 53
+#  steps:
+#  - intent: question_53
+#  - action: utter_question_53
+#
+#- story: happy FAQ path 54
+#  steps:
+#  - intent: question_54
+#  - action: utter_question_54
+#
+#- story: happy FAQ path 55
+#  steps:
+#  - intent: question_55
+#  - action: utter_question_55
+#
+#- story: happy FAQ path 56
+#  steps:
+#  - intent: question_56
+#  - action: utter_question_56
+#
+#- story: happy FAQ path 57
+#  steps:
+#  - intent: question_57
+#  - action: utter_question_57
+#
+#- story: happy FAQ path 58
+#  steps:
+#  - intent: question_58
+#  - action: utter_question_58
+#
+#- story: happy FAQ path 59
+#  steps:
+#  - intent: question_59
+#  - action: utter_question_59
+#
+#- story: happy FAQ path 60
+#  steps:
+#  - intent: question_60
+#  - action: utter_question_60
+#
+#- story: happy FAQ path 61
+#  steps:
+#  - intent: question_61
+#  - action: utter_question_61
+#
+#- story: happy FAQ path 62
+#  steps:
+#  - intent: question_62
+#  - action: utter_question_62
+#
+#- story: happy FAQ path 63
+#  steps:
+#  - intent: question_63
+#  - action: utter_question_63
+#
+#- story: happy FAQ path 64
+#  steps:
+#  - intent: question_64
+#  - action: utter_question_64
+#
+#- story: happy FAQ path 65
+#  steps:
+#  - intent: question_65
+#  - action: utter_question_65
+#
+#- story: happy FAQ path 66
+#  steps:
+#  - intent: question_66
+#  - action: utter_question_66
+#
+#- story: happy FAQ path 67
+#  steps:
+#  - intent: question_67
+#  - action: utter_question_67
+#
+#- story: happy FAQ path 68
+#  steps:
+#  - intent: question_68
+#  - action: utter_question_68
+#
+#- story: happy FAQ path 69
+#  steps:
+#  - intent: question_69
+#  - action: utter_question_69
+#
+#- story: happy FAQ path 70
+#  steps:
+#  - intent: question_70
+#  - action: utter_question_70
+#
+#- story: happy FAQ path 71
+#  steps:
+#  - intent: question_71
+#  - action: utter_question_71
+#
+#- story: happy FAQ path 72
+#  steps:
+#  - intent: question_72
+#  - action: utter_question_72
+#
+#- story: happy FAQ path 73
+#  steps:
+#  - intent: question_73
+#  - action: utter_question_73
+#
+#- story: happy FAQ path 74
+#  steps:
+#  - intent: question_74
+#  - action: utter_question_74
+#
+#- story: happy FAQ path 75
+#  steps:
+#  - intent: question_75
+#  - action: utter_question_75
+#
+#- story: happy FAQ path 76
+#  steps:
+#  - intent: question_76
+#  - action: utter_question_76
+#
+#- story: happy FAQ path 77
+#  steps:
+#  - intent: question_77
+#  - action: utter_question_77
+#
+#- story: happy FAQ path 78
+#  steps:
+#  - intent: question_78
+#  - action: utter_question_78
+#
+#- story: happy FAQ path 79
+#  steps:
+#  - intent: question_79
+#  - action: utter_question_79
+#
+#- story: happy FAQ path 80
+#  steps:
+#  - intent: question_80
+#  - action: utter_question_80
+#
+#- story: happy FAQ path 81
+#  steps:
+#  - intent: question_81
+#  - action: utter_question_81
+#
+#- story: happy FAQ path 82
+#  steps:
+#  - intent: question_82
+#  - action: utter_question_82
+#
+#- story: happy FAQ path 83
+#  steps:
+#  - intent: question_83
+#  - action: utter_question_83
+#
+#- story: happy FAQ path 84
+#  steps:
+#  - intent: question_84
+#  - action: utter_question_84
+#
+#- story: happy FAQ path 85
+#  steps:
+#  - intent: question_85
+#  - action: utter_question_85
+#
+

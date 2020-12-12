@@ -1,0 +1,109 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - male
+    - hp
+- intent: job_type
+  examples: |
+    - [salary](type_job)
+    - [self-employed](type_job)
+    - [trading](type_job)
+    - i have a [salaried]{"entity": "type_job", "value": "salary"} account
+    - i am [self employed]{"entity": "type_job", "value": "self-employed"}
+    - i am into [trading](type_job)
+    - [unmarried](type_job)
+    - Agriculture & [Allied](type_job) [Processing](type_job)
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - see you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - Yeah
+    - Yes
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think
+    - don't like that
+    - no way
+    - not really
+    - Not yet
+    - 15-05-1995
+    - lko
+    - una
+    - No
+    - I Don't think
+    - Not yet
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: fill_details
+  examples: |
+    - i want to fill details
+    - fill the form
+    - save my details
+    - fill form
+
+- intent: NoJob
+  examples: |
+    - No i didn't
+    - i was doing something else
+    - i was occupied else where
+
+- intent: HadJob
+  examples: |
+    - yes i had
+    - i was doing a different job
+    - i was occupied with other organisation
+
+- intent: OfCourse
+  examples: |
+    - yes i have acquired a new skill
+    - i have learnt few skills
+    - it was fun learning new skills
+
+- intent: NotSure
+  examples: |
+    - i don't think so
+    - I haven't learnt anything new
+    - No skills was added to my profile from there
+
+
+
+
+

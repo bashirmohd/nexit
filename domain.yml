@@ -1,0 +1,257 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- affirm
+- fill_details
+- job_type
+- greet
+- deny
+- goodbye
+- mood_great
+- mood_unhappy
+- bot_challenge
+- HadJob
+- NoJob
+- OfCourse
+- NotSure
+entities:
+- type_job
+slots:
+  first_name:
+    type: text
+    influence_conversation: true
+  acquire_skill:
+    type: text
+    influence_conversation: true
+  any_business:
+    type: text
+    influence_conversation: true
+  business_venture:
+    type: text
+    influence_conversation: true
+  dob:
+    type: text
+    influence_conversation: true
+  existing_bussiness:
+    type: text
+    influence_conversation: true
+  gender:
+    type: text
+    influence_conversation: true
+  job_after_exit:
+    type: text
+    influence_conversation: true
+  job_type:
+    type: text
+    influence_conversation: true
+  lga_origin:
+    type: text
+    influence_conversation: true
+  lga_residence:
+    type: text
+    influence_conversation: true
+  marital_status:
+    type: text
+    influence_conversation: true
+  need_loan:
+    type: text
+    influence_conversation: true
+  participate:
+    type: text
+    influence_conversation: true
+  requested_slot:
+    type: text
+    influence_conversation: false
+  sector:
+    type: text
+    influence_conversation: true
+  skill_type:
+    type: text
+    influence_conversation: true
+  state_origin:
+    type: text
+    influence_conversation: true
+  state_residence:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_first_name:
+    - text: Please provide your first name?
+  utter_ask_dob:
+  - text: What is your Date of Birth?
+  utter_ask_gender:
+  - text: What is your gender?
+    buttons:
+    - title: Male
+      payload: male
+    - title: Female
+      payload: female
+  utter_ask_marital_status:
+  - text: What is your marital status?
+    buttons:
+    - title: Married
+      payload: married
+    - title: Unmarried
+      payload: unmarried
+  utter_ask_state_origin:
+  - text: What is your state of origin?
+  utter_ask_lga_origin:
+  - text: What is your LGA of origin?
+  utter_ask_state_residence:
+  - text: What is your state of residence?
+  utter_ask_lga_residence:
+  - text: What is your LGA of residence?
+  utter_ask_job_after_exit:
+  - text: Do you have a job after exiting from N-power programme?
+    buttons:
+    - title: YES
+      payload: "/HadJob"
+    - title: NO
+      payload: "/NoJob"
+  utter_ask_job_type:
+  - text: What type of job?
+    buttons:
+    - title: Salary
+      payload: salary
+    - title: Self Employed
+      payload: self-employed
+    - title: Trading(Buying and Selling)
+      payload: trading
+  utter_ask_acquire_skill:
+  - text: During the N-power programme, do you aquire a skill?
+    buttons:
+    - title: Of Course
+      payload: "/OfCourse"
+    - title: I Don't think
+      payload: "/NotSure"
+  utter_ask_skill_type:
+  - text: What type of skill? Please specify
+  utter_ask_existing_bussiness:
+  - text: Do you have any existing business?
+    buttons:
+    - title: YES
+      payload: Yes
+    - title: NO
+      payload: No
+  utter_ask_sector:
+  - text: Which sector do you play in?
+    buttons:
+    - title: Agriculture & Allied Processing
+      payload: Agriculture & Allied Processing
+    - title: Art & Entertainment
+      payload: Art & Entertainment
+    - title: Automobile Services
+      payload: Automobile Services
+    - title: Fashion & Beauty
+      payload: Fashion & Beauty
+    - title: Catering & Event Management
+      payload: Catering & Event Management
+    - title: Courier & Delivery Services
+      payload: Courier & Delivery Services
+    - title: Creative Industry
+      payload: Creative Industry
+    - title: Apparels and Textiles
+      payload: Apparels and Textiles
+    - title: I.C.T
+      payload: I.C.T
+    - title: Manufacturing and Cottage Industry
+      payload: Manufacturing and Cottage Industry
+    - title: Media
+      payload: Media
+    - title: Publishing
+      payload: Publishing
+    - title: Telecommunications
+      payload: Telecommunications
+    - title: Hospitality
+      payload: Hospitality
+    - title: Health Service
+      payload: Health Service
+    - title: None
+      payload: None
+  utter_ask_any_business:
+  - text: Do you have any business idea you intent to start?
+    buttons:
+    - title: YES
+      payload: "/affirm"
+    - title: NO
+      payload: "/deny"
+  utter_ask_business_venture:
+  - text: Do you desire to own a business venture?
+    buttons:
+    - title: YES
+      payload: Yes
+    - title: NO
+      payload: No
+  utter_ask_need_loan:
+  - text: Do you need a loan for your business venture?
+    buttons:
+    - title: YES
+      payload: Yes
+    - title: NO
+      payload: No
+  utter_ask_participate:
+  - text: Would you like to participate in a digital and e-commerce skills acquisition training programme?
+    buttons:
+    - title: YES
+      payload: Yes
+    - title: NO
+      payload: No
+actions:
+- action_submit
+- action_deny_business
+- action_affirm_business
+- action_deny_affirm_job
+- action_acquire_skills
+forms:
+  user_details_form:
+    first_name:
+    - type: from_text
+    dob:
+    - type: from_text
+    gender:
+    - type: from_text
+    marital_status:
+    - type: from_text
+    state_origin:
+    - type: from_text
+    lga_origin:
+    - type: from_text
+    state_residence:
+    - type: from_text
+    lga_residence:
+    - type: from_text
+    existing_bussiness:
+    - type: from_text
+    sector:
+    - type: from_text
+    participate:
+    - type: from_text
+#    job_after_exit:
+#    - type: from_text
+#    job_type:
+#    - type: from_text
+#    acquire_skill:
+#    - type: from_text
+  user_job_skill_form:
+    skill_type:
+    - type: from_text
+  user_business_loan_form:
+    business_venture:
+    - type: from_text
+    need_loan:
+    - type: from_text

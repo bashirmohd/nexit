@@ -1,0 +1,75 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Activate form
+  steps:
+  - intent: fill_details
+  - action: user_details_form
+  - active_loop: user_details_form
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: user_details_form
+  steps:
+  # Form is deactivated
+  - action: user_details_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: utter_ask_job_after_exit
+#- action: action_submit
+
+- rule: Activate form
+  steps:
+  - intent: affirm
+  - action: action_affirm_business
+  - action: user_business_loan_form
+  - active_loop: user_business_loan_form
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: user_business_loan_form
+  steps:
+  # Form is deactivated
+  - action: user_business_loan_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_submit
+
+- rule: Activate form
+  steps:
+  - intent: OfCourse
+  - action: action_acquire_skills
+  - action: user_job_skill_form
+  - active_loop: user_job_skill_form
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: user_job_skill_form
+  steps:
+  # Form is deactivated
+  - action: user_job_skill_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: utter_ask_any_business
+
+
