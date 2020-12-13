@@ -176,7 +176,7 @@ class ActionSubmit(Action):
             tracker.get_slot("acquire_skill"),tracker.get_slot("skill_type"),
             tracker.get_slot("any_business"),
             tracker.get_slot("business_venture"),tracker.get_slot("need_loan"))
-        dispatcher.utter_message("Thanks for providing the details.")
+        dispatcher.utter_message("Thank You! Your details has been successfully sent. We will contact you soon!.")
         return []
 
 

@@ -89,11 +89,11 @@ responses:
   utter_goodbye:
   - text: Bye
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: I am a bot, powered by DTx team.
   utter_ask_first_name:
-    - text: Please provide your first name?
+    - text: Hi! I am Rakiya! Your NEXIT AI-Bot assistant. Please provide your FullName(First & Last name)?
   utter_ask_dob:
-  - text: What is your Date of Birth?
+  - text: What is your Date of Birth (DD-MM-YYYY)?
   utter_ask_gender:
   - text: What is your gender?
     buttons:

@@ -81,7 +81,7 @@ nlu:
 
 - intent: NoJob
   examples: |
-    - No i didn't
+    - No I didn't think so
     - i was doing something else
     - i was occupied else where
 
