@@ -1,6 +1,6 @@
 import mysql.connector
 
-def DataUpdate(First_name=" ",DateOfBirth=" ",Gender=" ", MaritalStatus=" ", state_origin=" ", lga_origin=" ", state_residence=" ",
+def DataUpdate(First_name=" ",DateOfBirth=" ", PhoneNumber=" ", Email=" ",Gender=" ", MaritalStatus=" ", state_origin=" ", lga_origin=" ", state_residence=" ",
                lga_residence=" ", existing_bussiness=" ", sector=" ", participate=" ",job_after_exit=" ",
                job_type=" ", acquire_skill=" ", skill_type=" ",any_business=" ", business_venture=" ", need_loan=" "):
     mydb = mysql.connector.connect(
@@ -11,7 +11,7 @@ def DataUpdate(First_name=" ",DateOfBirth=" ",Gender=" ", MaritalStatus=" ", sta
     )
 
     mycursor = mydb.cursor()
-    sql = "CREATE TABLE User_full_details (FirstName VARCHAR(255),DateOfBirth VARCHAR(255),Gender VARCHAR(25),MaritalStatus VARCHAR(25), " \
+    sql = "CREATE TABLE User_full_details (FirstName VARCHAR(255),DateOfBirth VARCHAR(255),PhoneNumber VARCHAR(255),Email VARCHAR(255),Gender VARCHAR(25),MaritalStatus VARCHAR(25), " \
           "state_origin VARCHAR(255),lga_origin VARCHAR(255),state_residence VARCHAR(255),lga_residence VARCHAR(255)," \
           "existing_bussiness VARCHAR(25),sector VARCHAR(255),participate VARCHAR(25),job_after_exit VARCHAR(25)," \
           "job_type VARCHAR(255),acquire_skill VARCHAR(25),skill_type VARCHAR(255),any_business VARCHAR(25)," \

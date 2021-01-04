@@ -122,7 +122,7 @@ class ValidateUserDetailsForm(FormValidationAction):
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
     ) -> List[EventType]:
 
-        required_slots = ["first_name","dob", "gender","marital_status","state_origin","lga_origin","state_residence",
+        required_slots = ["first_name","dob", "phone","email","gender","marital_status","state_origin","lga_origin","state_residence",
                           "lga_residence", "existing_bussiness","sector","participate","job_after_exit"]
 
         for slot_name in required_slots:
@@ -148,6 +148,8 @@ class ActionSubmit(Action):
         details.update({
             "FirstName":tracker.get_slot("first_name"),
             "dob":tracker.get_slot('dob'),
+            "phone": tracker.get_slot('phone'),
+            "email": tracker.get_slot('email'),
             "gender":tracker.get_slot("gender"),
             "marital_status":tracker.get_slot("marital_status"),
             "state_origin":tracker.get_slot("marital_status"),
@@ -168,7 +170,7 @@ class ActionSubmit(Action):
         print(details)
         DataUpdate(
         tracker.get_slot("first_name"),
-            tracker.get_slot('dob'),tracker.get_slot("gender"),tracker.get_slot("marital_status"),
+            tracker.get_slot('dob'),tracker.get_slot('phone'),tracker.get_slot('email'),tracker.get_slot("gender"),tracker.get_slot("marital_status"),
             tracker.get_slot("state_origin"),tracker.get_slot("lga_origin"),tracker.get_slot("state_residence"),
             tracker.get_slot("lga_residence"),tracker.get_slot("existing_bussiness"),tracker.get_slot("sector"),
             tracker.get_slot("participate"),
