@@ -16,9 +16,19 @@ intents:
 - NoJob
 - OfCourse
 - NotSure
+- HaveBVN
+- NoBVN
+- BVN_No
+- AgreeFillup
+- DisagreeFillup
 entities:
 - type_job
+- bvn_no
 slots:
+  bvn_no:
+    type: text
+  bvn:
+    type: text
   first_name:
     type: text
     influence_conversation: true
@@ -32,12 +42,6 @@ slots:
     type: text
     influence_conversation: true
   dob:
-    type: text
-    influence_conversation: true
-  phone:
-    type: text
-    influence_conversation: true
-  email:
     type: text
     influence_conversation: true
   existing_bussiness:
@@ -84,7 +88,7 @@ slots:
     influence_conversation: true
 responses:
   utter_greet:
-  - text: Hey! How are you?
+  - text: Hey! How may I help you?
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -95,15 +99,27 @@ responses:
   utter_goodbye:
   - text: Bye
   utter_iamabot:
-  - text: I am a bot, powered by DTx team.
+  - text: I am a bot, powered by Rasa.
+  utter_have_bvn:
+  - text: Hi, welcome to Nexit Portal. Do you have bvn number?
+    buttons:
+    - title: YES
+      payload: "/HaveBVN"
+    - title: NO
+      payload: "/NoBVN"
+  utter_ask_bvn:
+  - text: Please provide your BVN number?
+  utter_agree_fill_form:
+  - text: "Do you agree to provide us the details to complete your registration?"
+    buttons:
+    - title: YES
+      payload: "/AgreeFillup"
+    - title: NO
+      payload: "/DisagreeFillup"
   utter_ask_first_name:
-    - text: Hi! I am Rakiya! Your Aboki NEXIT AI-Bot assistant. Please provide your Full Names (First & Last name)?
+    - text: Please provide your first name?
   utter_ask_dob:
-  - text: What is your Date of Birth (DD-MM-YYYY)?
-  utter_ask_phone:
-  - text: What is your Phone Number?
-  utter_ask_email:
-  - text: What is your Email Address?
+  - text: What is your Date of Birth?
   utter_ask_gender:
   - text: What is your gender?
     buttons:
@@ -221,21 +237,22 @@ responses:
       payload: Yes
     - title: NO
       payload: No
+  utter_no_bvn:
+    - text: Sorry You are not eligible to complete the registration . Please contact the Administrator or Come back when you have the correct BVN.
+  utter_thanks:
+    - text: Thanks for giving us your valuable time.
 actions:
 - action_submit
 - action_deny_business
 - action_affirm_business
 - action_deny_affirm_job
 - action_acquire_skills
+- action_verify_bvn
 forms:
   user_details_form:
     first_name:
     - type: from_text
     dob:
-    - type: from_text
-    phone:
-    - type: from_text
-    email:
     - type: from_text
     gender:
     - type: from_text

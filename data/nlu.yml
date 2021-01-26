@@ -81,7 +81,7 @@ nlu:
 
 - intent: NoJob
   examples: |
-    - No I didn't think so
+    - No i didn't
     - i was doing something else
     - i was occupied else where
 
@@ -102,6 +102,36 @@ nlu:
     - i don't think so
     - I haven't learnt anything new
     - No skills was added to my profile from there
+
+- intent: HaveBVN
+  examples: |
+    - yes i have bvn
+    - I do have bvn number
+
+- intent: NoBVN
+  examples: |
+    - No i don't have bvn
+    - I don't have bvn number
+
+- intent: AgreeFillup
+  examples: |
+    - yes i agree to fill form
+    - I do agree to fill form
+
+- intent: DisagreeFillup
+  examples: |
+    - No i disagree to fill form
+    - I disagree to fill form
+
+- intent: BVN_No
+  examples: |
+    - It's [22344829789]{"entity": "bvn_no", "value": "22344829789"}
+    - my bvn number is [22344829789]{"entity": "bvn_no", "value": "22344829789"}
+    - [22344829789]{"entity": "bvn_no", "value": "22344829789"}
+
+
+
+
 
 
 

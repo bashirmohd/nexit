@@ -7,6 +7,33 @@ stories:
   - intent: greet
   - action: utter_greet
 
+- story: happy path
+  steps:
+  - intent: fill_details
+  - action: utter_have_bvn
+  - intent: HaveBVN
+  - action: utter_ask_bvn
+  - intent: BVN_No
+  - action: action_verify_bvn
+
+- story: AgreeFillup happy path
+  steps:
+  - intent: AgreeFillup
+  - action: user_details_form
+  - active_loop: user_details_form
+
+- story: DisagreeFillup happy path
+  steps:
+  - intent: DisagreeFillup
+  - action: utter_thanks
+
+
+- story: deny bvn path
+  steps:
+  - intent: fill_details
+  - action: utter_have_bvn
+  - intent: NoBVN
+  - action: utter_no_bvn
 
 - story: unhappy user_business_loan_form path
   steps:
